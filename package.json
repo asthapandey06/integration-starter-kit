@@ -1,0 +1,26 @@
+{
+  "name": "integration-starter-kit",
+  "version": "1.0.0",
+  "description": "Reusable building blocks for third-party integrations: OAuth 2.0, encrypted token storage, safe token refresh, retries and rate limiting",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/server.js",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "gen-key": "node -e \"console.log(require('crypto').randomBytes(32).toString('base64'))\""
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "ioredis": "^5.4.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.0",
+    "tsx": "^4.15.0",
+    "typescript": "^5.5.0"
+  }
+}

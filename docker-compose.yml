@@ -1,0 +1,12 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+
+  app:
+    build: .
+    env_file: .env
+    environment:
+      REDIS_URL: redis://redis:6379
+    ports: ["3000:3000"]
+    depends_on: [redis]
